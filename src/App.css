@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+:root {
+  --blue: blue;
+  --yellow: yellow;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 10px;
+  background-color: var(--blue);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.game-container {
+  background-color: var(--yellow);
+  display: grid;
+  grid-template-columns: 10rem 10rem 10rem;
+  grid-template-rows: 10rem 10rem 10rem;
+  grid-gap: 1rem;
+}
+
+.item {
+  background: var(--blue);
+  padding: 0.5rem;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+/* tokens */
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid black;
+  pointer-events: none;
+}
+
+.cross {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.stick {
+  width: 10%;
+  height: 100%;
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.stick1 {
+  background-color: black;
+  transform: rotate(45deg);
+}
+.stick2 {
+  background-color: black;
+  transform: rotate(-45deg);
+}
+
+.buttons {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0;
+  width: 20%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--blue);
+  background-color: var(--yellow);
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.3s;
+  border: 0.2rem solid var(--yellow);
+}
+
+button:first-child {
+  margin-right: 0.5rem;
+}
+
+button:hover {
+  color: var(--yellow);
+  background-color: var(--blue);
+  border: 0.2rem solid var(--yellow);
+}
+
+.alert-msg {
+  color: red;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.game-info {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+/* media queires  */
+
+@media (max-width: 768px) {
+  .game-container {
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem;
+    grid-gap: 0.6rem;
   }
-  to {
-    transform: rotate(360deg);
+  .circle {
+    border: 6px solid black;
+  }
+
+  html {
+    font-size: 8px;
+  }
+
+  button {
+    width: 46%;
+  }
+}
+
+@media (max-width: 250px) {
+  .game-container {
+    grid-template-columns: 4rem 4rem 4rem;
+    grid-template-rows: 4rem 4rem 4rem;
+    grid-gap: 0.4rem;
+  }
+  .circle {
+    border: 6px solid black;
+  }
+
+  html {
+    font-size: 7px;
   }
 }
