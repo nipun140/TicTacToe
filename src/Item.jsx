@@ -23,7 +23,7 @@ function Item(props) {
         onClick={onClick}
         style={{
           pointerEvents: isclickable ? "all" : "none",
-          background: winelineArr.includes(index) ? "red" : "blue",
+          background: winelineArr.includes(index) ? "#ff3838" : "#273c75",
         }}
         className="item"
       >

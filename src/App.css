@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+
 :root {
-  --blue: blue;
-  --yellow: yellow;
+  --blue: #273c75;
+  --yellow: #fff200;
+  --red: #ff3838;
 }
 
 html {
   font-size: 10px;
   background-color: var(--blue);
+  font-family: "Otomanopee One", sans-serif;
 }
 
 #root {
@@ -14,6 +18,7 @@ html {
   align-items: center;
   justify-content: space-evenly;
   min-height: 100vh;
+  padding: 1rem;
 }
 
 * {
@@ -24,7 +29,8 @@ html {
 
 .title {
   text-align: center;
-  font-size: 3rem;
+  color: var(--yellow);
+  font-size: 3.3rem;
   margin-top: 1rem;
 }
 
@@ -82,7 +88,7 @@ html {
 
 .buttons {
   display: flex;
-  width: 85%;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -112,12 +118,13 @@ button:hover {
 }
 
 .alert-msg {
-  color: red;
+  color: var(--red);
   font-weight: bold;
   font-size: 2.5rem;
 }
 
 .game-info {
+  text-align: center;
   font-size: 2rem;
   margin: 1rem 0;
 }
@@ -126,12 +133,12 @@ button:hover {
 
 @media (max-width: 768px) {
   .game-container {
-    grid-template-columns: 6rem 6rem 6rem;
-    grid-template-rows: 6rem 6rem 6rem;
-    grid-gap: 0.6rem;
+    grid-template-columns: 8rem 8rem 8rem;
+    grid-template-rows: 8rem 8rem 8rem;
+    grid-gap: 0.8rem;
   }
   .circle {
-    border: 6px solid black;
+    border: 7px solid black;
   }
 
   html {
@@ -145,12 +152,20 @@ button:hover {
 
 @media (max-width: 250px) {
   .game-container {
-    grid-template-columns: 4rem 4rem 4rem;
-    grid-template-rows: 4rem 4rem 4rem;
-    grid-gap: 0.4rem;
+    grid-template-columns: 5rem 5rem 5rem;
+    grid-template-rows: 5rem 5rem 5rem;
+    grid-gap: 0.5rem;
   }
   .circle {
     border: 6px solid black;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  button:first-child {
+    margin-right: 0;
   }
 
   html {

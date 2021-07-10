@@ -100,14 +100,14 @@ function App() {
 
   return (
     <>
-      <h1 className="title">Tic-Tac-Toe</h1>
+      <h1 className="title">Tic-Tac-Toe (X/O)</h1>
       <h1 className="game-info">
         {showalert ? (
           <span className="alert-msg">{msg}</span>
         ) : isPlayer1 ? (
-          "player1(X)"
+          "player1(X) Turn"
         ) : (
-          "player2(O)"
+          "player2(O) Turn"
         )}{" "}
       </h1>
       <div className="game-container">
